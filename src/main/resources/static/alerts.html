@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/alerts.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h2>Alerts</h2>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Buttons for Low Stock and Expiry Alerts -->
+        <div class="btn-group">
+            <button class="btn btn-warning me-2" onclick="fetchLowStockAlerts()">Low Stock Alerts</button>
+            <button class="btn btn-danger" onclick="fetchExpiryAlerts()">Expiry Alerts</button>
+        </div>
+
+        <!-- Table to Display Alerts -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Expiry Date</th>
+                </tr>
+            </thead>
+            <tbody id="alertsTable">
+                <!-- Data will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </main>
+
+    <script src="js/alerts.js"></script>
+</body>
+</html>
