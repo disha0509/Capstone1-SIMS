@@ -10,6 +10,9 @@
 <body>
     <!-- Header -->
     <header>
+        <button class="btn-back" onclick="window.location.href='admin.html'"> <!-- Back button -->
+            &larr; Back
+        </button>
         <h2>Reports</h2>
     </header>
 
@@ -24,6 +27,7 @@
         </div>
 
         <!-- Report Table -->
+        <div class="table-responsive mt-4"> 
         <table class="table table-bordered mt-4">
             <thead>
                 <tr>
@@ -38,7 +42,11 @@
                 <!-- Data will be dynamically inserted here -->
             </tbody>
         </table>
+        </div>
     </main>
+    <footer>
+        <p>&copy; 2025 Smart Inventory Management System. All Rights Reserved.</p>
+    </footer>
 
     <script src="js/report.js"></script>
 </body>

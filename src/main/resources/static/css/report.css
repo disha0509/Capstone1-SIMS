@@ -3,21 +3,43 @@ body {
     background: #f8f9fa;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes full height */
 }
 
 header {
     background: #007bff;
     color: white;
     padding: 15px;
-    text-align: center;
+    position: relative; /* Allows positioning of child elements like the back button */
 }
 
 header h2 {
     margin: 0;
+    text-align: center; /* Keeps the title centered */
+}
+
+header .btn-back {
+    position: absolute; /* Allows precise positioning within the header */
+    top: 50%; /* Vertically centers the button */
+    left: 5px; /* Positions the button 15px from the right edge */
+    transform: translateY(-50%); /* Adjusts for vertical centering */
+    background: #6c757d; /* Optional: Matches the button's color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header .btn-back:hover {
+    background: #5a6268; /* Darker shade on hover */
 }
 
 main {
     padding: 20px;
+    flex-grow: 1;
 }
 
 .btn-group {
@@ -50,4 +72,13 @@ table tbody tr:hover {
 table th, table td {
     text-align: center;
     padding: 10px;
+}
+
+footer {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    margin-top: auto;
 }
