@@ -27,7 +27,23 @@ The Smart Inventory Management System (SIMS) will streamline inventory tracking 
 - **Java Spring Boot** - Backend framework for handling inventory logic.
 - **postgreSQL** - Database to store users, inventory items and stock movement.
 
-
+## folder structure
+Capstone1-SIMS/
+├── src/
+│   ├── main/
+│   │   ├── java/com/inven/                  # Backend code
+│   │   │   ├── InvenApplication.java       # Main application class
+│   │   │   ├── controller/                 # REST controllers
+│   │   │   ├── service/                    # Business logic
+│   │   │   ├── repository/                 # Database access
+│   │   │   └── model/                      # Entity classes
+│   │   ├── resources/
+│   │   │   ├── static/                     # Static files (CSS, JS, images)
+│   │   │   ├── templates/                  # Thymeleaf templates
+│   │   │   └── application.properties      # Configuration
+│   └── test/                               # Unit and integration tests
+├── pom.xml                                 # Maven configuration
+└── README.md                               # Project documentation
 
 ## How to Run
 
