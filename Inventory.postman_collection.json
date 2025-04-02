@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "990823e9-9004-4f67-9354-7e7f82ce5b86",
+		"name": "Inventory",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "43362276"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"AnshimaUser\",\r\n    \"password\": \"AnshimaUser123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"AnshimaUser\",\r\n    \"password\": \"AnshimaUser123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "add item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"name\": \"pepper\",\r\n        \"quantity\": 20,\r\n        \"expiryDate\": \"2025-05-05\",\r\n        \"category\": \"Basic need\",\r\n        \"supplierInfo\": \"local\"\r\n        \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/inventory/add"
+			},
+			"response": []
+		},
+		{
+			"name": "view items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/inventory/view"
+			},
+			"response": []
+		},
+		{
+			"name": "edit item",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \"id\": 20,\r\n        \"name\": \"pepper\",\r\n        \"quantity\": 15,\r\n        \"expiryDate\": \"2025-05-05\",\r\n        \"category\": \"Basic need\"\r\n        \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/inventory/edit/20"
+			},
+			"response": []
+		},
+		{
+			"name": "delete item",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/inventory/delete/20"
+			},
+			"response": []
+		},
+		{
+			"name": "sell item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"15\",\r\n    \"quantity\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/inventory/sell/15"
+			},
+			"response": []
+		},
+		{
+			"name": "low-stock-alert",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/alerts/low-stock"
+			},
+			"response": []
+		},
+		{
+			"name": "expiry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/alerts/expiry"
+			},
+			"response": []
+		},
+		{
+			"name": "daily report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/reports/daily"
+			},
+			"response": []
+		},
+		{
+			"name": "weekly report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/reports/weekly"
+			},
+			"response": []
+		}
+	]
+}
