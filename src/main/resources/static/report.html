@@ -48,6 +48,12 @@
         <p>&copy; 2025 Smart Inventory Management System. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/report.js"></script>
+    <script src="js/report.js">
+        const userRole = localStorage.getItem("role");
+    if (!userRole) {
+        alert("You must log in to access this page!");
+        window.location.href = "index.html"; // Redirect to login page
+    }
+    </script>
 </body>
 </html>

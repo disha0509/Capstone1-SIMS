@@ -3,20 +3,30 @@ const SELL_API = "http://localhost:8080/api/inventory/sell";
 
 // Fetch inventory data and populate the table
 async function fetchInventory() {
-    const response = await fetch(INVENTORY_API);
-    const items = await response.json();
+    try {
+        const response = await fetch(INVENTORY_API);
 
-    const table = document.getElementById("inventoryTable");
-    table.innerHTML = "";
+        if (!response.ok) {
+            throw new Error(`Failed to fetch inventory: ${response.status} ${response.statusText}`);
+        }
 
-    items.forEach(item => {
-        const row = `<tr>
-            <td>${item.id}</td>
-            <td>${item.name}</td>
-            <td>${item.quantity}</td>
-        </tr>`;
-        table.innerHTML += row;
-    });
+        const items = await response.json();
+
+        const table = document.getElementById("inventoryTable");
+        table.innerHTML = ""; // Clear the table before adding new rows
+
+        items.forEach(item => {
+            const row = `<tr>
+                <td>${item.id}</td>
+                <td>${item.name}</td>
+                <td>${item.quantity}</td>
+            </tr>`;
+            table.innerHTML += row;
+        });
+    } catch (error) {
+        console.error("Error fetching inventory:", error);
+        alert("Failed to load inventory. Please try again later.");
+    }
 }
 
 // Handle selling an item
@@ -44,8 +54,8 @@ async function sellItem(event) {
 
 // Handle logout
 function logout() {
-    alert("Logging out...");
-    window.location.href = "index.html"; // Redirect to login
+    localStorage.removeItem("role"); // Clear the user's role
+    window.location.href = "index.html"; // Redirect to login page
 }
 
 // Redirect to About Us page

@@ -11,7 +11,7 @@
     <!-- Header -->
     <header>
         <nav>
-            <button onclick="navigateTo('inventory.html')">Home</button>
+            <button onclick="navigateTo('user.html')">Home</button>
             <button onclick="navigateTo('index.html')">Logout</button>
         </nav>
     </header>
@@ -34,6 +34,12 @@
         <p>&copy; 2025 Smart Inventory Management System. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/aboutus.js"></script>
+    <script src="js/aboutus.js">
+        const userRole = localStorage.getItem("role");
+    if (!userRole) {
+        alert("You must log in to access this page!");
+        window.location.href = "index.html"; // Redirect to login page
+    }
+    </script>
 </body>
 </html>

@@ -22,12 +22,14 @@ async function handleLogin() {
         const data = await response.json();
 
         if (response.ok) {
+            // Store the user's role in localStorage
+            localStorage.setItem("role", data.role);
+
+            // Redirect based on role
             if (data.role === "USER") {
-                window.location.href = "inventory.html"; // Redirect to Inventory page
-                alert(data.message); // "Login successful!"
+                window.location.href = "user.html"; // Redirect to Inventory page
             } else if (data.role === "ADMIN") {
                 window.location.href = "admin.html"; // Redirect to Admin page
-                alert(data.message); // "Login successful!"
             }
         } else {
             document.getElementById("message").innerText = "Login failed! Check credentials.";

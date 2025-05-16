@@ -20,7 +20,7 @@ public class SecurityConfig {
             .csrf().disable() // Disable CSRF (optional for APIs)
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/api/users/register", "/api/users/login","/api/inventory/**","/api/alerts/**","/api/reports/**").permitAll() // Allow public endpoints
-                .requestMatchers("/index.html","/inventory.html","/admin.html","/aboutus.html","/alerts.html","/inventorymanage.html","report.html").permitAll()
+                .requestMatchers("/index.html","/inventory.html","/admin.html","/aboutus.html","/alerts.html","/inventorymanage.html","report.html","user.html").permitAll()
                 .requestMatchers("/css/**", "/js/**").permitAll()
                 .anyRequest().authenticated() // Restrict other endpoints
             )

@@ -9,9 +9,9 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <header class="inventory-header">
         <h2><i class="bi bi-box-seam"></i> Smart Inventory Management System</h2>
-        <div>
+        <div class="header-buttons">
             <button class="btn btn-info" onclick="showAboutUs()">About Us</button>
             <button class="btn btn-danger" onclick="logout()">Logout</button>
         </div>
@@ -20,8 +20,8 @@
     <!-- Inventory Table -->
     <main class="container">
         <h3 class="text-center mb-4">Inventory Items</h3>
-        <table class="table table-bordered">
-            <thead>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark">
                 <tr>
                     <th>ID</th>
                     <th>Item Name</th>
@@ -34,18 +34,18 @@
         </table>
 
         <!-- Sell Item Form -->
-        <div class="form-container" id="sellItemForm">
-            <h4>BUY ITEM</h4>
-            <form onsubmit="sellItem(event)">
+        <div class="form-container">
+            <h4 class="text-center">Buy Item</h4>
+            <form onsubmit="sellItem(event)" class="p-3">
                 <input type="number" id="sellItemId" placeholder="Item ID" class="form-control mb-2" required>
-                <input type="number" id="sellItemQuantity" placeholder="Quantity to Sell" class="form-control mb-2" required>
-                <button type="submit" class="btn btn-danger">BUY</button>
+                <input type="number" id="sellItemQuantity" placeholder="Quantity to Buy" class="form-control mb-2" required>
+                <button type="submit" class="btn btn-success w-100">Buy</button>
             </form>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="inventory-footer">
         <p>&copy; 2025 Smart Inventory Management System. All Rights Reserved.</p>
     </footer>
 

@@ -27,7 +27,7 @@ public class AlertService {
         LocalDate today = LocalDate.now();
         return inventoryItemRepository.findAll()
             .stream()
-            .filter(item -> item.getExpiryDate() != null && 
+            .filter(item -> item.getExpiryDate() != null &&
                             item.getExpiryDate().isBefore(today.plusDays(item.getExpiryAlertDays())))
             .collect(Collectors.toList());
     }

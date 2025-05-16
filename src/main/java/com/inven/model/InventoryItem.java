@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 public class InventoryItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @SequenceGenerator(name = "inventory_seq", sequenceName = "inventory_sequence", allocationSize = 1)
+
     private Long id;
 
     @Column(nullable = false)

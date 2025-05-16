@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.inven.model.User;
 import com.inven.service.UserService;
-@CrossOrigin("*")
+
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {

@@ -1,5 +1,4 @@
-// Handle logout functionality
 function logout() {
-    alert("Logging out...");
+    localStorage.removeItem("role"); // Clear the user's role
     window.location.href = "index.html"; // Redirect to login page
 }

@@ -45,6 +45,9 @@
                 <input type="number" id="editItemId" placeholder="Item ID" class="form-control mb-2" required>
                 <input type="text" id="editItemName" placeholder="New Item Name" class="form-control mb-2">
                 <input type="number" id="editItemQuantity" placeholder="New Quantity" class="form-control mb-2">
+                <input type="date" id="editItemExpiryDate" placeholder="New Expiry Date" class="form-control mb-2"> <!-- New Field -->
+                <input type="text" id="editItemSupplierInfo" placeholder="New Supplier Info" class="form-control mb-2"> <!-- New Field -->
+                <input type="text" id="editItemCategory" placeholder="New Category" class="form-control mb-2"> <!-- New Field -->
                 <button type="submit" class="btn btn-warning">Edit</button>
             </form>
         </div>
@@ -78,6 +81,12 @@
         <p>&copy; 2025 Smart Inventory Management System. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/inventorymanage.js"></script>
+    <script src="js/inventorymanage.js">
+        const userRole = localStorage.getItem("role");
+    if (!userRole) {
+        alert("You must log in to access this page!");
+        window.location.href = "index.html"; // Redirect to login page
+    }
+    </script>
 </body>
 </html>

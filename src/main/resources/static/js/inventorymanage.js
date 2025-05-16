@@ -71,12 +71,15 @@ async function editItem(event) {
     const id = document.getElementById("editItemId").value;
     const name = document.getElementById("editItemName").value;
     const quantity = document.getElementById("editItemQuantity").value;
+    const expiryDate = document.getElementById("editItemExpiryDate").value; // New Field
+    const supplierInfo = document.getElementById("editItemSupplierInfo").value; // New Field
+    const category = document.getElementById("editItemCategory").value;
 
     try {
         const response = await fetch(`${API_BASE_URL}/edit/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name, quantity }),
+            body: JSON.stringify({ name, quantity , expiryDate, supplierInfo, category }),
         });
         if (response.ok) {
             alert("Item edited successfully!");
